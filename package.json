@@ -9,10 +9,15 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "linking-switch": "node ./scripts/rename_angular_file.js",
+    "link-libs": "npm link ionic-angular-utilities",
+    "unlink-libs": "npm unlink ionic-angular-utilities",
+    "clean": "rm -rf platforms/ plugins/ www/ node_modules/ package-lock.json"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^10.1.0",
     "@angular/common": "~10.0.0",
     "@angular/core": "~10.0.0",
     "@angular/forms": "~10.0.0",

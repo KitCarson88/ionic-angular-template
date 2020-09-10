@@ -6,12 +6,14 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
+import { SpinnerModule } from 'ionic-angular-utilities';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SpinnerModule,
     HomePageRoutingModule
   ],
   declarations: [HomePage]
