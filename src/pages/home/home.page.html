@@ -7,7 +7,29 @@
 </ion-header>
 
 <ion-content>
-  <ws-data [options]="wsDataOptions">
-    
+  <ws-data [options]="wsDataOptions" (retry)="exampleRetry()">
+
+    <!-- <div customSpinner>CUSTOM SPINNER</div> -->
+    <!-- <div customError> CUSTOM WS ERROR HTML SECTION </div> -->
+
+    <div dataContent>
+      <ng-container *ngIf="(exampleArray$ | async) as exampleArray">
+        <ion-list class="exampleList impleme-list" *ngIf="exampleArray.length">
+          <ion-item *ngFor="let example of exampleArray" (click)="openDetail(example)">
+            <ion-label>
+              <div class="exampleInfo f-20 f-weight-600">{{example.data_1}}</div>
+              <div class="exampleInfo f-20">{{example.data_2}}</div>
+              <div class="exampleInfo f-18">{{example.date | date: 'dd/MM/yyyy'}}</div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <div class="error-container side-padding" *ngIf="!exampleArray.length">
+          <span>Dati non trovati</span>
+          <!--<span class="f-18"
+          [innerHtml]="'TYPE_NO_DATA_FOUND' | translate: { dataType: ('DATA_TYPE_EXAMPLES' | translate) }"></span>-->
+        </div>
+      </ng-container>
+    </div>
   </ws-data>
 </ion-content>

@@ -15,7 +15,7 @@ import { ExampleDTO } from '../../entities/dto/exampleDTO';
 export class HomePage implements OnInit
 {
   @select(["ws", "example", "data"])
-  example$: Observable<ExampleDTO>;
+  exampleArray$: Observable<ExampleDTO>;
 
   @select(["ws", "example", "loading"])
   exampleLoading$: Observable<boolean>;
@@ -40,5 +40,10 @@ export class HomePage implements OnInit
       errorRetryButtonFill: 'outline',
       errorRetryButtonLabel: 'Riprova'
     };
+  }
+
+  exampleRetry()
+  {
+    this.wsActions.retrieveExampleData();
   }
 }
