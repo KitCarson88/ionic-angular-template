@@ -78,7 +78,7 @@ export class HomePage implements OnInit, AfterViewInit
       errorRetryButtonLabel: 'Retry',
       data$: this.testData$,
       dataItemTemplate: null,
-      emptyListCondition: this.testDataAvailable$.pipe(map(available => !available)),
+      dataAvailableCondition: this.testDataAvailable$,
       emptyListMessage: 'The are no tests'
     };
   }
