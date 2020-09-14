@@ -6,16 +6,15 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-import { SpinnerModule, ErrorContainerModule, WsDataModule } from 'ionic-angular-utilities';
+import { WsDataModule, WsDataListModule } from 'ionic-angular-utilities';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SpinnerModule,
-    ErrorContainerModule,
     WsDataModule,
+    WsDataListModule,
     HomePageRoutingModule
   ],
   declarations: [HomePage]

@@ -4,7 +4,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { prepareThunk, prepareThunkActionReducers } from '@redux-multipurpose/core';
 
 import { 
-    INITIAL_STATE_WEB_SERVICES
+    testDataAdapter,
+	INITIAL_STATE_WEB_SERVICES
 } from './ws.model';
 
 import {
@@ -18,6 +19,7 @@ const wsProvidersInjector = Injector.create({ providers: [
 const exampleProvider = wsProvidersInjector.get(ExampleProvider);
 
 //Thunks
+export const getTestDataThunk = prepareThunk('ws', 'getTestData', exampleProvider.getTestData);
 export const retrieveExampleDataThunk = prepareThunk('ws', 'retrieveExampleData', exampleProvider.retrieveExampleData);
 
 //Ws actions and reducers
@@ -30,7 +32,8 @@ const wsSlice = createSlice({
         }
     },
     extraReducers: prepareThunkActionReducers([
-        { thunk: retrieveExampleDataThunk, substate: 'example', adapter: null }
+        { thunk: getTestDataThunk, substate: 'testData', adapter: testDataAdapter },
+		{ thunk: retrieveExampleDataThunk, substate: 'example', adapter: null }
     ])
 });
 

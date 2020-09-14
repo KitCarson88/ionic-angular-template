@@ -1,12 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Test
+      Ionic Angular Utilities example
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <h2>Examples</h2>
+
   <ws-data [options]="wsDataOptions" (retry)="exampleRetry()">
 
     <!-- <div customSpinner>CUSTOM SPINNER</div> -->
@@ -25,11 +27,25 @@
         </ion-list>
 
         <div class="error-container side-padding" *ngIf="!exampleArray.length">
-          <span>Dati non trovati</span>
-          <!--<span class="f-18"
-          [innerHtml]="'TYPE_NO_DATA_FOUND' | translate: { dataType: ('DATA_TYPE_EXAMPLES' | translate) }"></span>-->
+          <span class="f-18">Data not found</span>
         </div>
       </ng-container>
     </div>
   </ws-data>
+
+  <h2>Tests</h2>
+  <ws-data-list [options]="wsDataListOptions" (retry)="testRetry()">
+
+    <!-- <div customSpinner>CUSTOM SPINNER</div> -->
+    <!-- <div customError> CUSTOM WS ERROR HTML SECTION </div> -->
+    <!-- <div customEmptyListError> CUSTOM EMPTY LIST HTML SECTION </div> -->
+
+  </ws-data-list>
+  <ng-template let-item #itemTemplate>
+    <div>
+      <div class="f-20 f-weight-600">{{item.title}}</div>
+      <div class="f-18">{{item.date | date: 'dd/MM/yyyy'}}</div>
+    </div>
+  </ng-template>
+  
 </ion-content>

@@ -9,6 +9,28 @@ html {
     --ion-default-font: #{$font-family-default} !important;
     height: 100%;
     width: 100%;
+
+    @include small-mobile {
+        font-size: $font-size-base * 0.8 !important; //8px
+    }
+    @include tablet {
+        font-size: $font-size-base * 1.4 !important; //14px
+    }
+    @include big-screen {
+        font-size: $font-size-base * 1.6 !important; //16px
+    }
+    @include hd {
+        font-size: $font-size-base * 1.8 !important; //18px
+    }
+    @include full-hd {
+        font-size: $font-size-base * 2 !important; //20px
+    }
+    @include wide-quad-hd {
+        font-size: $font-size-base * 2.6 !important; //26px
+    }
+    @include ultra-hd {
+        font-size: $font-size-base * 4 !important; //40px
+    }
 }
 
 body {

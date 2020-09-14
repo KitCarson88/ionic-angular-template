@@ -10,7 +10,7 @@ import { constants } from '../utils/constants';
     providedIn: 'root'
 })
 export class ExampleProvider
-{
+{   
     private serviceReturnManagement(call: Promise<any>)
     {
         return call
@@ -35,12 +35,29 @@ export class ExampleProvider
         if (environment.mock)
             return api.debugGet('assets/mock-data/get-example-data.json').pipe(delay(2000), timeout(3000)).toPromise();
 
-        /*let urlPoisList = environment.baseUrl + environment.baseVersion + constants.exampleEndpoint;
+        let urlExamplesList = environment.baseUrl + environment.baseVersion + constants.exampleEndpoint;
 
         let header = {
             'Content-Type': 'application/json'
         };
 
-        return this.serviceReturnManagement(api.get(urlPoisList, {}, header));*/
+        return this.serviceReturnManagement(api.get(urlExamplesList, {}, header));
+    }
+
+    getTestData()
+    {
+        let api: Api = ServiceLocator.injector.get(Api);
+
+        //Only if mock flag true, retrieve data from json mock
+        if (environment.mock)
+            return api.debugGet('assets/mock-data/get-test-data.json').pipe(delay(2000), timeout(3000)).toPromise();
+
+        let urlTestsList = environment.baseUrl + environment.baseVersion + constants.testsEndpoint;
+
+        let header = {
+            'Content-Type': 'application/json'
+        };
+
+        return this.serviceReturnManagement(api.get(urlTestsList, {}, header));
     }
 }

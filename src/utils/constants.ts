@@ -1,6 +1,7 @@
 export const constants = {
     //Endpoints
     exampleEndpoint: '',
+    testsEndpoint: '',
 
     //Configuration
     SERVICE_TIMEOUT: 5,

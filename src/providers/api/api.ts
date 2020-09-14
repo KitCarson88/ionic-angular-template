@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-//import { HTTP } from '@ionic-native/http/ngx';
+import { HTTP } from '@ionic-native/http/ngx';
 import { HttpClient } from '@angular/common/http';
 
 import { constants } from '../../utils/constants';
@@ -11,9 +11,9 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class Api
 {
-  constructor(/*private http: HTTP, */private debugHttp: HttpClient)
+  constructor(private http: HTTP, private debugHttp: HttpClient)
   {
-    //this.http.setRequestTimeout(constants.SERVICE_TIMEOUT);
+    this.http.setRequestTimeout(constants.SERVICE_TIMEOUT);
   }
 
   debugGet(endpoint: string)
@@ -28,7 +28,7 @@ export class Api
       })));
   }
 
-  /*async get(endpoint: string, params?: any, header?: any)
+  async get(endpoint: string, params?: any, header?: any)
   {
       console.log("Executing get: ", { endpoint, header });
       let data = await this.http.get(endpoint, params, header);
