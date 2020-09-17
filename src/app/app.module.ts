@@ -17,7 +17,8 @@ import { ServiceLocator } from '../services/locator.service';
 
 import
 {
-  getHTTP
+  getHTTP,
+  IonicAngularUtilitiesModule
 } from 'ionic-angular-utilities';
 
 @NgModule({
@@ -30,7 +31,8 @@ import
     IonicModule.forRoot({
       mode: 'md'
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    IonicAngularUtilitiesModule.forRoot()
   ],
   providers: [
     StatusBar,
