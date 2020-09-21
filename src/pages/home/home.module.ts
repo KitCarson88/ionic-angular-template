@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-import { WsDataModule, WsDataListModule } from 'ionic-angular-utilities';
+import { WsDataModule, WsDataListModule, DebounceButtonModule } from 'ionic-angular-utilities';
 
 @NgModule({
   imports: [
@@ -15,6 +15,7 @@ import { WsDataModule, WsDataListModule } from 'ionic-angular-utilities';
     IonicModule,
     WsDataModule,
     WsDataListModule,
+    DebounceButtonModule,
     HomePageRoutingModule
   ],
   declarations: [HomePage]

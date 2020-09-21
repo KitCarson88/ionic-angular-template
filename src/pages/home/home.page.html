@@ -6,10 +6,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <h2>Examples</h2>
 
-  <ws-data [options]="wsDataOptions" (retry)="exampleRetry()">
+  <ion-button class="retrieveExampleButton" fill="outline" shape="round" (click)="retrieveExamples()">
+    <span class="f-18 f-uppercase">Retrieve examples</span>
+  </ion-button>
+
+
+  <ws-data [options]="wsDataOptions" (retry)="retrieveExamples()">
 
     <!-- <div customSpinner>CUSTOM SPINNER</div> -->
     <!-- <div customError> CUSTOM WS ERROR HTML SECTION </div> -->
@@ -34,7 +39,12 @@
   </ws-data>
 
   <h2 style="margin-top: 30px !important">Tests</h2>
-  <ws-data-list [options]="wsDataListOptions" (retry)="testRetry()">
+
+  <debounce-button class="retrieveTestButton" debounce="400" (debounceClick)="retrieveTests()">
+    <span class="f-18 f-uppercase">Retrieve tests</span>
+  </debounce-button>
+
+  <ws-data-list [options]="wsDataListOptions" (retry)="retrieveTests()">
 
     <!-- <div customSpinner>CUSTOM SPINNER</div> -->
     <!-- <div customError> CUSTOM WS ERROR HTML SECTION </div> -->

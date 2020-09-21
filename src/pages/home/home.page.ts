@@ -53,8 +53,8 @@ export class HomePage implements OnInit, AfterViewInit
 
   ngOnInit()
   {
-    this.wsActions.retrieveExampleData();
-    this.wsActions.getTestData();
+    //this.wsActions.retrieveExampleData();
+    //this.wsActions.getTestData();
 
     this.wsDataOptions = {
       loading$: this.exampleLoading$,
@@ -89,12 +89,12 @@ export class HomePage implements OnInit, AfterViewInit
     this.wsDataListOptions.dataItemTemplate = this.dataItemTemplate;
   }
 
-  exampleRetry()
+  retrieveExamples()
   {
     this.wsActions.retrieveExampleData();
   }
 
-  testRetry()
+  retrieveTests()
   {
     this.wsActions.getTestData();
   }
