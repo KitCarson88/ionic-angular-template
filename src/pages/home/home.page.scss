@@ -7,6 +7,10 @@
 }
 
 .retrieveTestButton {
+    display: block;
+    float: none;
+    width: 240px !important;
     --width: 240px;
-    height: 40px !important;
+    --height: 40px;
+    margin: 20px auto !important;
 }
