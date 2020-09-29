@@ -14,7 +14,7 @@
   </ion-button>
 
 
-  <ws-data [options]="wsDataOptions" (retry)="retrieveExamples()">
+  <ws-data class="examplesContainer" [options]="wsDataOptions" (retry)="retrieveExamples()">
 
     <!-- <div customSpinner>CUSTOM SPINNER</div> -->
     <!-- <div customError> CUSTOM WS ERROR HTML SECTION </div> -->
@@ -56,6 +56,5 @@
       <div class="f-20 f-weight-600">{{item.title}}</div>
       <div class="f-18">{{item.date | date: 'dd/MM/yyyy'}}</div>
     </div>
-  </ng-template>
-  
+  </ng-template>  
 </ion-content>
